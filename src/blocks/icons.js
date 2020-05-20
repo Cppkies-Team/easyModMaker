@@ -65,5 +65,5 @@ Blockly.JavaScript["create_icon_link"] = function (block) {
 	const iconY = block.getFieldValue("ICON_Y")
 	const link = block.getFieldValue("LINK")
 	// TODO: Change ORDER_NONE to the correct strength.
-	return [`[${iconX}, ${iconY}, ${link}]`, Blockly.JavaScript.ORDER_NONE]
+	return [`[${iconX}, ${iconY}, "${link}"]`, Blockly.JavaScript.ORDER_NONE]
 }
