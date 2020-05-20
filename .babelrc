@@ -1,0 +1,13 @@
+{
+	"presets": ["@babel/preset-react"],
+	"plugins": [
+		"@babel/syntax-nullish-coalescing-operator",
+		"minify-constant-folding",
+		"macros"
+	],
+	"env": {
+		"production": {
+			"presets": ["minify"]
+		}
+	}
+}

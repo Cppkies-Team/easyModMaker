@@ -1,0 +1,70 @@
+{
+	"name": "easymodmaker",
+	"version": "0.0.0",
+	"description": "Make modding easier with Cppkies Easy Mod Maker!",
+	"main": "index.js",
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run build:prod"
+		}
+	},
+	"scripts": {
+		"build:prod": "env NODE_ENV=production npm run build",
+		"build:dev": "env NODE_ENV=development npm run build",
+		"build": "npx webpack",
+		"eslint": "npx eslint ./src/*.tsx ./src/**/*.tsx ./src/**/*.ts *.js",
+		"watch": "npm run build:dev -- -- --watch",
+		"eslint:fix": "npm run eslint -- --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Cppkies-Team/easyModMaker.git"
+	},
+	"keywords": [
+		"cppkies",
+		"maker",
+		"mod"
+	],
+	"author": "G lander",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Cppkies-Team/easyModMaker/issues"
+	},
+	"homepage": "https://github.com/Cppkies-Team/easyModMaker#readme",
+	"devDependencies": {
+		"@babel/plugin-syntax-nullish-coalescing-operator": "^7.7.4",
+		"@babel/preset-react": "^7.7.4",
+		"@typescript-eslint/eslint-plugin": "^2.34.0",
+		"@typescript-eslint/parser": "^2.34.0",
+		"babel": "^6.23.0",
+		"babel-loader": "^8.0.6",
+		"babel-minify": "^0.5.1",
+		"babel-plugin-console": "^0.2.1",
+		"babel-plugin-macros": "^2.8.0",
+		"babel-plugin-minify-constant-folding": "^0.5.0",
+		"babel-preset-minify": "^0.5.1",
+		"css-loader": "^3.4.0",
+		"eslint": "^6.7.2",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-config-standard": "^14.1.0",
+		"eslint-plugin-import": "^2.19.1",
+		"eslint-plugin-node": "^10.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.20.0",
+		"eslint-plugin-standard": "^4.0.1",
+		"file-loader": "^5.0.2",
+		"html-webpack-plugin": "^3.2.0",
+		"husky": "^4.2.3",
+		"keycode": "^2.2.0",
+		"node-blockly": "^1.2.8",
+		"raw-loader": "^4.0.1",
+		"react": "^16.12.0",
+		"react-blockly-drawer": "^1.6.6",
+		"react-dom": "^16.12.0",
+		"react-router-dom": "^5.1.2",
+		"style-loader": "^1.1.2",
+		"styled-components": "^5.0.0",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10"
+	}
+}
