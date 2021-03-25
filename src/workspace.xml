@@ -1,1 +1,9 @@
-<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"></xml>
+<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+  <block type="text" id="C%!0rL5I9F6C{}8@O@tT" x="213" y="238">
+    <field name="TEXT"></field>
+    <comment pinned="true" h="80" w="390">Welcome to the Cppkies Easy Mod Maker!
+This is the main editor of this editor thing!
+You should try adding some upgrades and such!
+Have fun!</comment>
+  </block>
+</xml>

@@ -1,4 +1,5 @@
-import Blockly from "node-blockly/browser"
+import Blockly from "blockly"
+import JSGen from "blockly/javascript"
 
 Blockly.defineBlocksWithJsonArray([
 	{
@@ -53,17 +54,17 @@ Blockly.defineBlocksWithJsonArray([
 	},
 ])
 
-Blockly.JavaScript["create_icon"] = function (block) {
-	const iconX = block.getFieldValue("ICON_X")
-	const iconY = block.getFieldValue("ICON_Y")
+JSGen["create_icon"] = function (block: Blockly.Block) {
+	const iconX: number = block.getFieldValue("ICON_X")
+	const iconY: number = block.getFieldValue("ICON_Y")
 	// TODO: Change ORDER_NONE to the correct strength.
-	return [`[${iconX}, ${iconY}]`, Blockly.JavaScript.ORDER_NONE]
+	return [`[${iconX}, ${iconY}]`, JSGen.ORDER_NONE]
 }
 
-Blockly.JavaScript["create_icon_link"] = function (block) {
+JSGen["create_icon_link"] = function (block: Blockly.Block) {
 	const iconX = block.getFieldValue("ICON_X")
 	const iconY = block.getFieldValue("ICON_Y")
 	const link = block.getFieldValue("LINK")
 	// TODO: Change ORDER_NONE to the correct strength.
-	return [`[${iconX}, ${iconY}, "${link}"]`, Blockly.JavaScript.ORDER_NONE]
+	return [`[${iconX}, ${iconY}, "${link}"]`, JSGen.ORDER_NONE]
 }

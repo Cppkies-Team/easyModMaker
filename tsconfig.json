@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"incremental": true,
+		"strictNullChecks": true,
+		"moduleResolution": "node",
+		"target": "ES2015"
+	}
+}

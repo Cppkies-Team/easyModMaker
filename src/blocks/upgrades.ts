@@ -1,4 +1,5 @@
-import Blockly from "node-blockly/browser"
+import Blockly from "blockly"
+import JSGen from "blockly/javascript"
 
 Blockly.defineBlocksWithJsonArray([
 	{
@@ -60,41 +61,21 @@ Blockly.defineBlocksWithJsonArray([
 	},
 ])
 
-Blockly.JavaScript["get_upgrade"] = function (block) {
-	const nameOrId = Blockly.JavaScript.valueToCode(
-		block,
-		"NAME_OR_ID",
-		Blockly.JavaScript.ORDER_ATOMIC
-	)
+JSGen["get_upgrade"] = function (block: Blockly.Block) {
+	const nameOrId = JSGen.valueToCode(block, "NAME_OR_ID", JSGen.ORDER_ATOMIC)
 	let code = ""
 	if (typeof nameOrId === "number") code = `Game.UpgradesById[${nameOrId}]`
 	else code = `Game.Upgrades[${nameOrId}]`
 	// TODO: Change ORDER_NONE to the correct strength.
-	return [code, Blockly.JavaScript.ORDER_NONE]
+	return [code, JSGen.ORDER_NONE]
 }
 
-Blockly.JavaScript["new_upgrade"] = function (block) {
-	const name = Blockly.JavaScript.valueToCode(
-		block,
-		"NAME",
-		Blockly.JavaScript.ORDER_ATOMIC
-	)
-	const description = Blockly.JavaScript.valueToCode(
-		block,
-		"DESC",
-		Blockly.JavaScript.ORDER_ATOMIC
-	)
-	const price = Blockly.JavaScript.valueToCode(
-		block,
-		"PRICE",
-		Blockly.JavaScript.ORDER_ATOMIC
-	)
-	const icon = Blockly.JavaScript.valueToCode(
-		block,
-		"ICON",
-		Blockly.JavaScript.ORDER_ATOMIC
-	)
-	const onBuy = Blockly.JavaScript.statementToCode(block, "ONBUY")
-	const code = `new Cppkies.Upgrade(${name}, ${description}, ${price}, ${icon}, () => {\n${onBuy}})`
+JSGen["new_upgrade"] = function (block: Blockly.Block) {
+	const name = JSGen.valueToCode(block, "NAME", JSGen.ORDER_ATOMIC)
+	const description = JSGen.valueToCode(block, "DESC", JSGen.ORDER_ATOMIC)
+	const price = JSGen.valueToCode(block, "PRICE", JSGen.ORDER_ATOMIC)
+	const icon = JSGen.valueToCode(block, "ICON", JSGen.ORDER_ATOMIC)
+	const onBuy = JSGen.statementToCode(block, "ONBUY")
+	const code = `new Cppkies.Upgrade(${name}, ${description}, ${price}, ${icon}, () => {${onBuy}})`
 	return code
 }
